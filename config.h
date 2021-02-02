@@ -67,5 +67,7 @@ static const struct arg args[] = {
 	/* function format          argument */
 	{ keymap, "[%s]",	NULL},
 	{ separator, " ",	NULL},
+	{ run_command, "[VOL: %s]", "amixer get Master | tail -n 1 | grep '[*%]' | awk '//{print $5}' | tr -d []"},
+	{ separator, " ",	NULL},
 	{ datetime, "[%s]",	"%a %b %d %Y %H:%M" },
 };
